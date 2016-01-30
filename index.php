@@ -13,8 +13,4 @@ use League\Csv\Reader;
 echo "<h1>Welcome to GnomeInc&reg</h1>";
 
 $reader = Reader::createFromPath('var/www/agri_data.csv');
-foreach ($reader as $index => $row) {
-    foreach($row as $j => $data){
-        echo "$data";
-    }
-}
+echo $reader;
