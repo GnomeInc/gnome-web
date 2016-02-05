@@ -1,3 +1,7 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Gnome Inc.</title>
 <?php
 /**
  * Agriduino Web Interface Root Page
@@ -6,16 +10,41 @@
  * Date: 1/30/16
  * Time: 3:38 PM
  */
-
+include 'vendor/autoload.php';
 use League\Csv\Reader;
-
-
-echo "<h1>Welcome to GnomeInc&reg</h1>";
-
-//$reader = Reader::createFromPath('var/www/agri_data.csv');
-$reader = Reader::createFromPath('agri_data.csv');
-
 $csv = Reader::createFromPath('agri_data.csv');
-$headers = $csv->fetchOne();
+?>
+    <link href="css/table.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>Welcome to GnomeInc&reg</h1>
 
-echo $headers;
+<table id="data_table" cellspacing="0" summary="Condition data for gnome garden">
+    <caption>Your Gnome Data</caption>
+<?php
+
+$data = $csv->fetchAll();
+$header = $data[0];
+echo "<thead><tr>";
+foreach($header as $h){
+    echo "<th>";
+    echo $h;
+    echo "</th>";
+}
+echo "</tr></thead>";
+$i = 1;
+while($row= $csv->fetchOne($i)){
+    echo("<tr>");
+    foreach($row as $d){
+        echo "<td>";
+        echo $d;
+        echo "</td>";
+    }
+    echo("</tr>");
+    $i++;
+}
+?>
+</table>
+</body>
+</html>

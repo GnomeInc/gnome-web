@@ -1,14 +1,15 @@
 {
-    "name": "eric/gnome-web",
-    "description": "Web Interface for Gnome Inc",
-    "require": {
-        "league/csv": "^8.0"
-    },
-    "license": "GNU Public",
-    "authors": [
-        {
-            "name": "Eric Kuha",
-            "email": "erickuha@gmail.com"
-        }
-    ]
+  "name": "gnome_inc/gnome_web",
+  "description": "Web Interface for Garden Data.",
+  "minimum-stability": "dev",
+  "license": "GNU Public",
+  "authors": [
+    {
+      "name": "Eric Kuha",
+      "email": "erickuha@gmail.com"
+    }
+  ],
+  "require": {
+    "league/csv": "8.0.0"
+  }
 }
