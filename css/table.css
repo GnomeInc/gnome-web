@@ -11,6 +11,10 @@ th  {
     background: #CAEBEA;
 }
 
+tr:hover td{
+    background: #C1Dad8;
+}
+
 td {
     border-right: 1px solid #C1Dad8;
     border-bottom: 1px solid #c1dad7;
