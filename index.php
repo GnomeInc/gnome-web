@@ -12,5 +12,10 @@ use League\Csv\Reader;
 
 echo "<h1>Welcome to GnomeInc&reg</h1>";
 
-$reader = Reader::createFromPath('var/www/agri_data.csv');
-echo $reader;
+//$reader = Reader::createFromPath('var/www/agri_data.csv');
+$reader = Reader::createFromPath('agri_data.csv');
+
+$csv = Reader::createFromPath('agri_data.csv');
+$headers = $csv->fetchOne();
+
+echo $headers;
